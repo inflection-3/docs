@@ -1,0 +1,25 @@
+
+Decentralized Storage ensures Verifiable Credentials (VCs) and profile data are stored in a tamper-resistant, globally accessible manner, using protocols like IPFS. By storing data off-chain and anchoring hashes on-chain, this component supports scalability while maintaining verifiability.
+
+## Theoretical Role
+
+- **Data Distribution**: Stores VCs across a decentralized network.
+- **Content Addressing**: Generates unique hashes for data retrieval.
+- **On-Chain Linkage**: Anchors hashes in the IdentityRegistry for trust.
+
+## Diagram
+
+The following Mermaid diagram shows storage and retrieval. Render it in Mermaid Live Editor.
+
+```mermaid
+graph LR
+    A[VC Data] -->|Upload| B[Decentralized Network\n(IPFS)]
+    B -->|Generates| C[IPFS Hash]
+    C -->|Anchors| D[IdentityRegistry]
+    E[External Protocol] -->|Fetches via Hash| B
+```
+
+## Explanation
+
+- **Storage**: VCs are stored off-chain for scalability.
+- **Verification**: Hashes link to on-chain registry for trust.

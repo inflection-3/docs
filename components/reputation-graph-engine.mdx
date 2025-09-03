@@ -1,0 +1,29 @@
+# Reputation Graph Engine
+
+## Description
+
+The Reputation Graph Engine models user interactions as a graph, where nodes represent DIDs or wallet addresses, and edges denote stablecoin transactions. It computes reputation metrics, such as transaction volume or frequency, to inform economic profiles. This component is theoretically designed to handle large-scale interaction data, supporting scalable reputation calculations.
+
+## Theoretical Role
+
+- **Graph Construction**: Builds a network of nodes (users) and edges (transactions).
+- **Metric Computation**: Applies algorithms (e.g., weighted PageRank) to derive reputation scores.
+- **Data Querying**: Provides queryable outputs for AI-driven profile generation.
+
+## Diagram
+
+The following Mermaid diagram visualizes the reputation graph. Render it in Mermaid Live Editor.
+
+```mermaid
+graph TD
+    A[User DID A] -- Tx Volume: 100 --> B[User DID B]
+    B -- Tx Volume: 50 --> C[User DID C]
+    A -- Tx Volume: 200 --> C
+    D[Graph Engine] -->|Computes| E[Reputation Metrics]
+    E -->|Outputs| F[Score Data]
+```
+
+## Explanation
+
+- **Graph Structure**: Nodes and edges represent user interactions.
+- **Computation**: Metrics like volume drive reputation scores.

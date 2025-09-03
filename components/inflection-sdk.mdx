@@ -1,0 +1,27 @@
+
+
+The Inflection SDK is a theoretical interface for external protocols (e.g., lending dApps) to verify DIDs, VCs, and ZKPs. It abstracts complex blockchain and cryptographic operations, enabling seamless integration with Inflection's identity layer while preserving user privacy.
+
+## Theoretical Role
+
+- **VC Verification**: Validates VCs against on-chain hashes and signatures.
+- **ZKP Validation**: Verifies proof correctness without data exposure.
+- **Multi-Chain Support**: Queries identities across compatible blockchains.
+
+## Diagram
+
+The following Mermaid diagram shows SDK interactions. Render it in Mermaid Live Editor.
+
+```mermaid
+graph TD
+    A[External dApp] -->|Calls| B[Inflection SDK]
+    B -->|Queries| C[IdentityRegistry]
+    B -->|Fetches| D[Decentralized Storage]
+    B -->|Verifies| E[ZKP System]
+    B -->|Returns| F[Verified Profile Claim]
+```
+
+## Explanation
+
+- **Integration**: SDK simplifies access for dApps.
+- **Privacy**: Validates ZKPs and VCs securely.

@@ -1,0 +1,28 @@
+
+# AI Profile Generator
+
+## Description
+
+The AI Profile Generator theoretically processes reputation graph data to create economic profiles, such as credit scores, formatted as Verifiable Credentials (VCs). Using machine learning models, it infers user attributes from transaction patterns, enabling dynamic and accurate profile generation for financial applications.
+
+## Theoretical Role
+
+- **Data Aggregation**: Collects metrics (e.g., transaction volume, frequency) from the graph.
+- **AI Inference**: Applies models to predict economic attributes (e.g., creditworthiness).
+- **VC Output**: Formats profiles as W3C-compliant VCs for sharing.
+
+## Diagram
+
+The following Mermaid flowchart illustrates profile generation. Render it in Mermaid Live Editor.
+
+```mermaid
+flowchart LR
+    A[Reputation Graph Data] -->|Volume, Frequency| B[AI Model]
+    B -->|Inference| C[Profile Score]
+    C -->|Formats| D[Verifiable Credential]
+```
+
+## Explanation
+
+- **Input to Output**: Graph metrics are transformed into VC claims.
+- **AI Role**: Inference ensures accurate, dynamic profiles.

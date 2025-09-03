@@ -1,0 +1,34 @@
+
+# Transaction Listener
+
+## Description
+
+The **Transaction Listener** is a theoretical component that monitors **stablecoin transactions** (e.g., **USDC transfers**) on the Inflection blockchain.
+
+It captures **real-time transaction data**—such as **sender, receiver, and amount**—to feed into the **reputation graph**, enabling **dynamic updates** to user profiles.
+
+This component bridges **on-chain activity** with **off-chain processing**, ensuring **responsiveness without centralized control**.
+
+## Theoretical Role
+
+- **Event Monitoring**: Listens for blockchain events (e.g., ERC20 `Transfer` events).
+- **Data Extraction**: Parses transaction details (e.g., `from`, `to`, `value`) for reputation metrics.
+- **Integration Trigger**: Initiates updates to the reputation graph and smart contract.
+
+## Diagram
+
+The following Mermaid sequence diagram shows the transaction monitoring flow.
+
+*(Render this in [Mermaid Live Editor](https://mermaid.live))*  
+
+```mermaid
+sequenceDiagram
+    participant BC as Blockchain
+    participant TL as Transaction Listener
+    participant RGE as Reputation Graph Engine
+    participant IR as IdentityRegistry
+
+    BC->>TL: Emit Transfer Event
+    TL->>RGE: Send Parsed Data
+    RGE->>IR: Update Reputation Score
+    IR->>BC: Store Updated Score
