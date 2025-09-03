@@ -20,6 +20,15 @@
               "introduction",
               "architecture"
             ]
+          }, {
+            "group": "Components",
+            "pages": [
+              "components/index",
+              "components/identity-registry",
+              "components/transaction-listener",
+              "components/reputation-graph-engine",
+              "components/ai-profile-generator"
+            ]
           }
          
         ]
