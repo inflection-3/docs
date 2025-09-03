@@ -1,0 +1,39 @@
+# Architecture
+
+## High-Level Architecture
+The **Inflection DID architecture** is a layered system balancing **security, scalability, and privacy**.  
+
+It processes **stablecoin transactions** to build a **reputation graph**, generates **AI-driven economic profiles as VCs**, and enables **private sharing via ZKPs**.  
+
+- **On-chain components** ensure immutability.  
+- **Off-chain components** handle computation and storage for efficiency.  
+
+### Layers
+- **Identity Layer:** Creates and anchors DIDs to user wallets.  
+- **Data Layer:** Monitors transactions and builds reputation graphs.  
+- **Profile Layer:** Generates VCs from AI-inferred profiles.  
+- **Sharing Layer:** Facilitates private, interoperable sharing via ZKPs and an SDK.  
+
+---
+
+## Diagram
+The following Mermaid diagram illustrates the architecture, showing data flows from wallet authentication to profile sharing.  
+
+*(Render this in a tool like [Mermaid Live Editor](https://mermaid.live))*  
+
+```mermaid
+graph TD
+    A[User Wallet] -->|Authenticates| B[DID Creation]
+    B -->|Anchors| C[IdentityRegistry\n(On-Chain)]
+    D[Stablecoin Transactions] -->|Monitored| E[Transaction Listener]
+    E -->|Feeds Data| F[Reputation Graph Engine]
+    F -->|Computes Metrics| G[AI Profile Generator]
+    G -->|Outputs| H[Verifiable Credential (VC)]
+    H -->|Stores Hash| C
+    H -->|Stores Data| I[Decentralized Storage\n(IPFS)]
+    J[External Protocol\n(e.g., Lending dApp)] -->|Requests Proof| K[ZKP System]
+    K -->|Generates/Verifies| L[Inflection SDK]
+    L -->|Queries| C
+    L -->|Fetches| I
+    M[Privacy & Interoperability] -.-> K
+    M -.-> L
