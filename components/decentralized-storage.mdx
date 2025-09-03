@@ -7,17 +7,13 @@ Decentralized Storage ensures Verifiable Credentials (VCs) and profile data are 
 - **Content Addressing**: Generates unique hashes for data retrieval.
 - **On-Chain Linkage**: Anchors hashes in the IdentityRegistry for trust.
 
-## Diagram
-
-The following Mermaid diagram shows storage and retrieval. Render it in Mermaid Live Editor.
 
 ```mermaid
 graph LR
-    A[VC Data] -->|Upload| B[Decentralized Network\n(IPFS)]
+    A[VC Data] -->|Upload| B[Decentralized Network IPFS]
     B -->|Generates| C[IPFS Hash]
-    C -->|Anchors| D[IdentityRegistry]
+    C -->|Anchors| D[Identity Registry]
     E[External Protocol] -->|Fetches via Hash| B
-```
 
 ## Explanation
 
