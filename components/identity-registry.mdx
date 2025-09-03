@@ -1,0 +1,29 @@
+The **IdentityRegistry** is a blockchain-based smart contract that serves as the **immutable foundation** for the Inflection DID system.  
+
+It anchors **Decentralized Identifiers (DIDs)** to user wallet addresses, stores **Verifiable Credential (VC) hashes**, and tracks **reputation scores** derived from stablecoin transactions.  
+
+By residing on a blockchain (e.g., **Ethereum** or **Sepolia** for testing), it ensures that identities are **tamper-proof** and **verifiable** by any protocol, supporting the system’s goal of a **decentralized economic identity layer**.  
+
+---
+
+## Theoretical Role
+- **DID Anchoring:** Registers unique DIDs to prevent duplication and enable global lookup.  
+- **VC Integration:** Stores hashes of VCs, linking off-chain data to on-chain proof.  
+- **Reputation Tracking:** Maintains dynamic reputation scores, updated by transaction-driven processes.  
+- **Verification Support:** Allows external protocols to confirm identity authenticity and profile validity.  
+
+---
+
+## Diagram
+The following Mermaid diagram illustrates the IdentityRegistry’s role in anchoring and verifying identities.  
+
+*(Render this in [Mermaid Live Editor](https://mermaid.live))*  
+
+```mermaid
+graph LR
+    A[User Wallet] -->|Registers| B[IdentityRegistry]
+    B -->|Stores| C[DID]
+    B -->|Stores| D[VC Hash]
+    B -->|Updates| E[Reputation Score]
+    F[External Protocol] -->|Queries| B
+    B -->|Returns| G[Verified Identity Data]
