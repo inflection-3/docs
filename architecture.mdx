@@ -24,14 +24,14 @@ The following Mermaid diagram illustrates the architecture, showing data flows f
 ```mermaid
 graph TD
     A[User Wallet] -->|Authenticates| B[DID Creation]
-    B -->|Anchors| C[IdentityRegistry\n(On-Chain)]
+    B -->|Anchors| C[IdentityRegistry<br/>(On-Chain)]
     D[Stablecoin Transactions] -->|Monitored| E[Transaction Listener]
     E -->|Feeds Data| F[Reputation Graph Engine]
     F -->|Computes Metrics| G[AI Profile Generator]
     G -->|Outputs| H[Verifiable Credential (VC)]
     H -->|Stores Hash| C
-    H -->|Stores Data| I[Decentralized Storage\n(IPFS)]
-    J[External Protocol\n(e.g., Lending dApp)] -->|Requests Proof| K[ZKP System]
+    H -->|Stores Data| I[Decentralized Storage<br/>(IPFS)]
+    J[External Protocol<br/>(e.g., Lending dApp)] -->|Requests Proof| K[ZKP System]
     K -->|Generates/Verifies| L[Inflection SDK]
     L -->|Queries| C
     L -->|Fetches| I
